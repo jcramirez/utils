@@ -2,6 +2,7 @@
 
 let fs = require('fs')
 let csvWriter = require('csv-write-stream')
+let csv = require('csv')
 
 const csv = {
   writeCsv: (filePath, headers, elems) => {
@@ -20,6 +21,25 @@ const csv = {
     writer.end()
 
     return filePath
+  },
+  
+  parseCsv = (csvFile) => {
+    return new Promise(function (resolve, reject) {
+      fs.readFile(csvFile, function (err, fileData) {
+        if (err) {
+          console.log(`Error read:\n {{err}}`)
+          reject(err)
+        }
+        csv.parse(fileData, {relax_column_count: true}, function (err, rows) {
+          if (err) {
+            console.log(`Error parse:\n {{err}}`)
+          }
+          // Your CSV data is in an array of arrys passed to this callback as rows.
+          // console.log(rows)
+          resolve(rows)
+        })
+      })
+    })
   }
 }
 
