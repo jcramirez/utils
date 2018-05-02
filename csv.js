@@ -40,6 +40,15 @@ const csv = {
         })
       })
     })
+  },
+  convertRowsToObject: (csvRows) => {
+    // the first row is going to the title
+    let header = csvRows.shift()
+    let elems = csvRows.map((e) => {
+      return _.zipObject(header, e)
+    })
+
+    return elems
   }
 }
 
