@@ -13,7 +13,8 @@
     "ieee754": "^1.1.8",
     "jsmodbus": "^2.4.0",
     "zeromq": "^4.6.0",
-    "mosca": "^2.8.1"
+    "mosca": "^2.8.1",
+    "ieee754": "^1.1.8"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
