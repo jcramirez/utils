@@ -9,7 +9,7 @@ function convert754ToFloat (val) {
 }
 
 function convertFloatTo754 (val) {
-let buffer = []
+  let buffer = []
   let tmp = ieee754.write (buffer, val, 0, false, 23, 4)
 
   return buffer
