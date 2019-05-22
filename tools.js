@@ -1,3 +1,5 @@
+'use strict'
+
 function tools () {
   let self = {}
   
@@ -26,3 +28,5 @@ function tools () {
   
   return self
 }
+
+module.exports = tools
