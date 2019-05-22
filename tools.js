@@ -3,6 +3,9 @@
 function tools () {
   let self = {}
   
+  /**
+   * see https://stackoverflow.com/questions/8273047/javascript-function-similar-to-python-range
+   */   
   self.range (start, stop, step) {
     if (typeof stop == 'undefined') {
         // one param defined
